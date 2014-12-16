@@ -219,9 +219,9 @@ def forecast(tidePath, inputPath, outputPath):
         if firstMax and stormTidePeaks != []:
             maxFile = open(os.path.join(JMA1OUTPUTPATH, 'maximum/maxStormTide.csv'), 'w')
             maxFile.write('Station Name\tStorm Surge (m)\tAstronomical Tide (m)\tSurge + Tide (m)\tEstimated Dates and Times of Peaks\n')
-            maxFile.write(surgetotide_dict[matchStation]['VERBOSE_NAME'].replace(',',' '))
+#            maxFile.write(surgetotide_dict[matchStation]['VERBOSE_NAME'].replace(',',' '))
             for maxTime, maxStormTide in zip(maxTimes, stormTidePeaks):  
-                line = ('\t' +
+                line = ((' ').join(surgetotide_dict[matchStation]['VERBOSE_NAME'].split(',')[-2:]) + '\t' +
                         '{:.2f}'.format(surgeValueDict[maxTime] - 0.5) + ' - ' +
                         '{:.2f}'.format(surgeValueDict[maxTime] + 0.5) + '\t' +
                         '{:.2f}'.format(interpolatedTideDict[maxTime]) + '\t' +
@@ -235,9 +235,9 @@ def forecast(tidePath, inputPath, outputPath):
             firstMax = False
         elif stormTidePeaks != []:
             maxFile = open(os.path.join(JMA1OUTPUTPATH, 'maximum/maxStormTide.csv'), 'a')
-            maxFile.write(surgetotide_dict[matchStation]['VERBOSE_NAME'].replace(',',' '))
+#            maxFile.write(surgetotide_dict[matchStation]['VERBOSE_NAME'].replace(',',' '))
             for maxTime, maxStormTide in zip(maxTimes, stormTidePeaks):            
-                line = ('\t' +
+                line = ((' ').join(surgetotide_dict[matchStation]['VERBOSE_NAME'].split(',')[-2:]) + '\t' +
                         '{:.2f}'.format(surgeValueDict[maxTime] - 0.5) + ' - ' + 
                         '{:.2f}'.format(surgeValueDict[maxTime] + 0.5) + '\t' + 
                         '{:.2f}'.format(interpolatedTideDict[maxTime]) + '\t' +
@@ -253,9 +253,9 @@ def forecast(tidePath, inputPath, outputPath):
                 
             
 if __name__ == '__main__':
-    tidePath = r'C:\Users\user\Dropbox\storm surge\Tides\Tides_September2013'
+    tidePath = r'C:\Users\user\Dropbox\storm surge\Tides\Tides_December2014'
     
-    inputPath = r'C:\Users\user\Documents\timeseries\timeseries'
-    outputPath = r'C:\Users\user\Documents\timeseries\timeseries'
+    inputPath = r'C:\Users\user\Google Drive\SS_Forecast\Ruby_Hagupit\20141204\03UTC\timeseries'
+    outputPath = r'C:\Users\user\Google Drive\SS_Forecast\Ruby_Hagupit\20141204\03UTC\timeseries'
     
     forecast(tidePath, inputPath, outputPath)

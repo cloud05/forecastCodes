@@ -66,7 +66,7 @@ def typhoon_class(mxwd, units='kt'):
 if __name__ == '__main__':
 
     # set path where files will be saved
-    path = r'C:\Users\user\Google Drive\SS_Forecast\Ruby_Hagupit\downloads'
+    path = r'C:\Users\Windows User\Dropbox\storm surge\Ruby_Hagupit\downloads DEC4 8PM'
 
     # filename to contain the latest tropical advisory from JMA
     filename = 'latestTropicalCycloneAdvisory.txt'

@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
 
     URLbase = 'http://www.wis-jma.go.jp/d/o/RJTD/Alphanumeric/Warning/Tropical_cyclone/'
-    path = r'C:\Users\user\Google Drive\SS_Forecast\downloads'
+    path = r'C:\Users\Windows User\Dropbox\storm surge\Ruby_Hagupit\downloads DEC4 8PM'
     try:
         os.mkdir(path)
     except WindowsError:
